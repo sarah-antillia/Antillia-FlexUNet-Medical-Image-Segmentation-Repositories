@@ -1,6 +1,13 @@
-<h2>Antillia-FlexUNet-Medical-Image-Segmentation-Repositories (2026/5/18)</h2>
+<h2>Antillia-FlexUNet-Medical-Image-Segmentation-Repositories (Updated:2026/5/20)</h2>
 Sarah T. Arai<br>
 Software Laboratory antillia.com<br>
+<ul>
+<li>2026/05/20: Added <a href="https://github.com/sarah-antillia/TensorFlow-FlexUNet-Tiled-Image-Segmentation-SenNet-HOA-Kidney-Sparse-Vasculature">TensorFlow-FlexUNet-Tiled-Image-Segmentation-SenNet-HOA-Kidney-Sparse-Vasculature</a></li>
+</ul>
+For more information on our <b>FlexUNet</b>, please refer to 
+<a href=https://github.com/sarah-antillia/TensorFlow-FlexUNet-Image-Segmentation-Model>TensorFlow-FlexUNet-Image-Segmentation-Model</a>
+<hr>
+
 <h4>
 1. <a href=https://github.com/sarah-antillia/TensorFlow-FlexUNet-Image-Segmentation-3D-CT-Kidney-Tumor>TensorFlow-FlexUNet-Image-Segmentation-3D-CT-Kidney-Tumor</a>
 </h4>
@@ -336,4 +343,7 @@ Software Laboratory antillia.com<br>
 </h4>
 <h4>
 112. <a href=https://github.com/sarah-antillia/TensorFlow-FlexUNet-Tiled-Image-Segmentation-SenNet-HOA-Kidney-Vasculature>TensorFlow-FlexUNet-Tiled-Image-Segmentation-SenNet-HOA-Kidney-Vasculature</a>
+</h4>
+<h4>
+113. <a href="https://github.com/sarah-antillia/TensorFlow-FlexUNet-Tiled-Image-Segmentation-SenNet-HOA-Kidney-Sparse-Vasculature">TensorFlow-FlexUNet-Tiled-Image-Segmentation-SenNet-HOA-Kidney-Sparse-Vasculature</a>
 </h4>
