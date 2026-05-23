@@ -2,6 +2,7 @@
 Sarah T. Arai<br>
 Software Laboratory antillia.com<br>
 <ul>
+<li>2026/05/24: Added <a href="#appendix">Appendix</a> for FlexUNet Model Structure.</ll>
 <li>2026/05/23: Added <a href="https://github.com/sarah-antillia/TensorFlow-FlexUNet-Image-Segmentation-PROMISE12-Prostate-Cancer">TensorFlow-FlexUNet-Image-Segmentation-PROMISE12-Prostate-Cancer</a></li>
 <li>2026/05/22: Added <a href="https://github.com/sarah-antillia/TensorFlow-FlexUNet-Image-Segmentation-OASBUD-Breast-UltrasonicSignals">TensorFlow-FlexUNet-Image-Segmentation-OASBUD-Breast-UltrasonicSignals</a></li>
 <li>2026/05/20: Added <a href="https://github.com/sarah-antillia/TensorFlow-FlexUNet-Tiled-Image-Segmentation-SenNet-HOA-Kidney-Sparse-Vasculature">TensorFlow-FlexUNet-Tiled-Image-Segmentation-SenNet-HOA-Kidney-Sparse-Vasculature</a></li>
@@ -358,3 +359,46 @@ TensorFlow-FlexUNet-Image-Segmentation-PROMISE12-Prostate-Cancer</a>
 <h4>
 115. <a href="https://github.com/sarah-antillia/TensorFlow-FlexUNet-Tiled-Image-Segmentation-SenNet-HOA-Kidney-Sparse-Vasculature">TensorFlow-FlexUNet-Tiled-Image-Segmentation-SenNet-HOA-Kidney-Sparse-Vasculature</a>
 </h4>
+<br>
+
+<h3>
+<a id="appendix">
+Appendix
+</a>
+</h3>
+<b>1. FlexUNet Model Structure </b><br>
+On more detail of our FlexUNet, please refer to 
+<a href=https://github.com/sarah-antillia/TensorFlow-FlexUNet-Image-Segmentation-Model>TensorFlow-FlexUNet-Image-Segmentation-Model</a>.<br>
+The main structure depends on a hyper-parameters configuration file <a href="./asset/train_eval_infer.config">train_eval_infer.config</a>
+<br>
+In this configuration, <b>model</b> section defines a small <b>base_filters = 16 </b> and large <b>base_kernels = (9,9)</b> for the first Conv Layer of Encoder Block of 
+<a href="./src/TensorFlowFlexModel.py">TensorFlowFlexUNet.py</a> 
+and a large <b>num_layers = 8</b> (including a bridge between Encoder and Decoder Blocks).
+<pre>
+[model]
+;You may specify your own UNet class derived from our TensorFlowFlexModel
+model         = "TensorFlowFlexUNet"
+generator     =  False
+image_width    = 512
+image_height   = 512
+image_channels = 3
+; The number of classes is six.
+num_classes    = 6
+base_filters   = 16
+base_kernels   = (9,9)
+num_layers     = 8
+dropout_rate   = 0.04
+dilation       = (3,3)
+</pre>
+<b>mask</b> section defines multiclass class-color-mapping table
+<pre>
+[mask]
+; You may specify ".npz" or ".png" for mask_file_format.
+mask_file_format = ".npz"
+;PanNuke rgb color map dict for six classes.
+rgb_map = {(0,0,0):0,(0,255,0):1,(255,0,0):2,(0,0,255):3,(255,255,0):4,(0,255,255):5,}
+</pre>
+
+<hr>
+
+<img src="./asset/model.png" width = "780" height="auto">
